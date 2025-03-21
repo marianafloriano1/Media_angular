@@ -1,0 +1,81 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-5">
+      <div class="card shadow-lg border-info">
+        <div class="card-header text-info text-center">
+          <h4>Média escolar</h4>
+        </div>
+        <div class="card-body border-info">
+          <div class="row">
+            <div class="col-md-4">
+              <input 
+                type="number" 
+                class="form-control form-control" 
+                placeholder="Nota 1" 
+                [(ngModel)]="nota1" 
+                name="nota1"
+              >
+            </div>
+            <div class="col-md-4">
+              <input 
+                type="number" 
+                class="form-control form-control" 
+                placeholder="Nota 2" 
+                [(ngModel)]="nota2" 
+                name="nota2"
+              >
+            </div>
+            <div class="col-md-4">
+              <input 
+                type="number" 
+                class="form-control form-control" 
+                placeholder="Nota 3" 
+                [(ngModel)]="nota3" 
+                name="nota3"
+              >
+            </div>
+            <div class="col-md-4">
+              <input 
+                type="number" 
+                class="form-control form-control" 
+                placeholder="Nota 4" 
+                [(ngModel)]="nota4" 
+                name="nota4"
+              >
+            </div>
+          </div>
+
+          <div class="text-center mt-3">
+            <button class="btn btn-outline-info btn-lg w-100" (click)="btn()">Calcular</button>
+          </div>
+        </div>
+        <div class="card-footer text-info text-center">
+
+          <div *ngIf="media_final !== 0" class="mt-3 text-center">
+            <p class="fs-5">Resultado:</p>
+
+            <h1>{{media_final}}</h1>
+           
+
+          <div *ngIf="media_final >= 6">
+              <p class="text-success">Aprovado</p>
+          </div>
+
+          <div *ngIf="media_final < 6 && media_final >= 5">
+              <p class="text-danger">Recuperação</p>
+          </div>
+
+       
+
+          <div *ngIf="media_final < 5">
+              <p class="text-danger">Reprovado</p>
+          </div>
+          </div>
+
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+
